@@ -13,11 +13,11 @@ namespace AzureMarketRESTService
         {
             // Web API configuration and services
 
-            // Web API routes
+            // Web API routes   
             config.MapHttpAttributeRoutes();
 
            
-            config.Routes.MapHttpRoute(name: "Proxy", routeTemplate: "{*path}", handler: HttpClientFactory.CreatePipeline
+            config.Routes.MapHttpRoute(name: "Proxy", routeTemplate: "api/{*path}", handler: HttpClientFactory.CreatePipeline
               (
                 innerHandler: new HttpClientHandler(), // will never get here if proxy is doing its job
                 handlers: new DelegatingHandler[]

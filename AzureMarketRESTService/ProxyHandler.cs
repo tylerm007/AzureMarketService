@@ -32,7 +32,7 @@ namespace AzureMarketRESTService
             response.EnsureSuccessStatusCode();
             if (response.IsSuccessStatusCode)
             {
-                await stripOutURLLinks(response, remoteURI, originalURI);
+               return await stripOutURLLinks(response, remoteURI, originalURI);
             }
       
             return response;
