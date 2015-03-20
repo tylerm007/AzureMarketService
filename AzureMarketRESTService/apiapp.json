@@ -1,0 +1,37 @@
+﻿{
+    "$schema": "http://json-schema.org/schemas/2014-11-01/apiapp.json#",
+    "id": "AzureMarketRESTService",
+    "namespace": "microsoft.com",
+    "gateway": "2015-01-14",
+    "version": "0.0.4",
+    "title": "Espresso Logic REST MicroService",
+    "summary": "This is a dynamic microservice that connects to your Espresso Logic REST API service and produces instant connections to tables, views, stored procedures, and custom designed resources.",
+    "author": "Espresso Logic",
+    "categories": [
+        "enterprise"
+    ],
+    "endpoints": {
+        "apiDefinition": "/swagger/docs/v1",
+        "status": null
+    },
+    "tags": [
+        "Espresso Logic",
+        "REST Services"
+    ],
+    "links": [
+        {
+      "text": "Home Page",
+      "url": "http://www.espressologic.com"
+        },
+        {
+            "text": "Documentation",
+            "url": "http://www.espressologic.com/resource-tag/documentation"
+        },
+        {
+            "text": "License Terms",
+            "url": "http://www.espressologic.com/terms-and-conditions/"
+        }
+    ],
+  "copyright": "Copyright 2015 Espresso Logic",
+  "brandColor": "#02a0df"
+}
