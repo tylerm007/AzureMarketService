@@ -46,9 +46,9 @@ namespace AzureMarketRESTService
             if (uri == null)
             {
                 string serverName = ConfigurationManager.AppSettings["ServerName"];
-                string projectName = ConfigurationManager.AppSettings["ProjectName"];
-                string urlFragment = ConfigurationManager.AppSettings["URLFragment"];
-                string version = ConfigurationManager.AppSettings["DefaultVersion"];            
+                string projectName = ConfigurationManager.AppSettings["AccountName"];
+                string urlFragment = ConfigurationManager.AppSettings["ProjectName"];
+                string version = ConfigurationManager.AppSettings["DefaultAPIVersion"];            
                 uri = "http://" + serverName + restOrData + projectName + "/" + urlFragment + "/" + version + "/";
                 ConfigurationManager.AppSettings["EspressoURL"] = uri;
             }

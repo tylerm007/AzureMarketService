@@ -14,9 +14,9 @@ namespace AzureMarketRESTService
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
             ConfigurationManager.AppSettings["ServerName"] = "espressologic-msftdemo.cloudapp.net";
-            ConfigurationManager.AppSettings["ProjectName"] = "msftdemo";
-            ConfigurationManager.AppSettings["URLFragment"] = "demo";
-            ConfigurationManager.AppSettings["DefaultVersion"] = "v1";
+            ConfigurationManager.AppSettings["AccountName"] = "msftdemo";
+            ConfigurationManager.AppSettings["ProjectName"] = "demo";
+            ConfigurationManager.AppSettings["DefaultAPIVersion"] = "v1";
             ConfigurationManager.AppSettings["UserName"] = "";
             ConfigurationManager.AppSettings["Password"] = "";
             ConfigurationManager.AppSettings["UseAPIKey"] = "true";
