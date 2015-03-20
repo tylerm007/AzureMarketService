@@ -5,7 +5,7 @@
     "gateway": "2015-01-14",
     "version": "0.0.4",
     "title": "Espresso Logic REST MicroService",
-    "summary": "This is a dynamic microservice that connects to your Espresso Logic REST API service and produces instant connections to tables, views, stored procedures, and custom designed resources.",
+    "summary": "A dynamic microservice that connects to your Espresso Logic REST API service",
     "author": "Espresso Logic",
     "categories": [
         "enterprise"

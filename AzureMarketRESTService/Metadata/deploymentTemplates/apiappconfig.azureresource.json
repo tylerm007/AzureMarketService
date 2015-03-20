@@ -1,10 +1,34 @@
 ﻿{
-  "$schema": "http://schemas.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
-  "parameters": {
-    "$system": {
-      "type": "Object"
+    "$schema": "http://schemas.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "$system": {
+            "type": "object"
+        },
+        "EspressoURL": {
+            "type": "string"
+        },
+        "APIKey": {
+            "type": "string"
+        }
     }
-  },
-  "resources": []
-}
+}, "resources": [ 
+     {
+      "apiVersion": "2014-11-01",
+      "type": "Microsoft.Web/sites",
+      "name": "[parameters('$system').siteName]",
+      "location": "[parameters('$system').location]",
+      "resources": [
+        {
+          "apiVersion": "2014-11-01",
+          "type": "config",
+          "name": "appsettings",
+          "properties": {
+            "EspressoURL": "[parameters('EspressoURL')]",
+            "APIKey": "[parameters('APIKey')]"
+          }
+        }
+      ]
+    }
+
+] }
