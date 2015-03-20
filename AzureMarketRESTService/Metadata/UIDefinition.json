@@ -1,0 +1,25 @@
+﻿{
+    "parameters": {
+        "type": "object",
+        "EspressoService": {
+            "EspressoURL": {
+                "defaultValue": "http://{servername}/rest/{project}/{urlfragment}/v1/",
+                "displayName": "Instance URL Location",
+                "description": "This is the instance location where your Espresso Logic account is created it also includes the account and project information. You can get this detail by referring to REST Lab or use this link: http://docs.espressologic.com/docs/debugging/rest-lab/. This value can be found as part of the URL when you log into your Espresso account.",
+                "tooltip": "This is the instance location where your Espresso Logic account is created. You can get this detail by referring the REST LAB or to this link: http://docs.espressologic.com/docs/debugging/rest-lab/. This value can be found as part of the URL when you log into your Espresso account.",
+                "constraints": {
+                    "required": "true"
+                }
+            },
+            "APIKey": {
+                "defaultValue": "demo_full",
+                "displayName": "API Key",
+                "description": "This is the API Key that grants specific access to this microservice account. You can get this detail by referring to this link: http://docs.espressologic.com/docs/logic-designer/security/authentication/.",
+                "tooltip": "Enter the API Key for this specific microservice",
+                "constraints": {
+                    "required": "true"
+                }
+            }
+        }
+    }
+}
