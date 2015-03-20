@@ -124,7 +124,7 @@
     <Content Include="Metadata\deploymentTemplates\apiappconfig.azureresource.json" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config" />
-    <Content Include="Metadata\deploymentTemplates\UIDefinition.json" />
+    <Content Include="Metadata\UIDefinition.json" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
