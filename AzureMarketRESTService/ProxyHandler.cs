@@ -8,11 +8,12 @@ namespace AzureMarketRESTService
 {
     public class ProxyHandler : DelegatingHandler
     {
+        private string restOrData = "/rest/";
         
         protected override async System.Threading.Tasks.Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, System.Threading.CancellationToken cancellationToken)
         {
-            string remoteWebSite = ConfigurationManager.AppSettings["EspressoURL"];
-            string apikey = ConfigurationManager.AppSettings["APIKey"];
+            string remoteWebSite = buildRemoteURI();
+            string apikey = getOrCreateAPIKey();
 
             UriBuilder remoteURI = new UriBuilder(remoteWebSite);
             UriBuilder originalURI = new UriBuilder(request.RequestUri);            
@@ -38,12 +39,44 @@ namespace AzureMarketRESTService
             return response;
         }
 
+        private string buildRemoteURI()
+        {
+            //only need to do this once
+            string uri = ConfigurationManager.AppSettings["EspressoURL"];
+            if (uri == null)
+            {
+                string serverName = ConfigurationManager.AppSettings["ServerName"];
+                string projectName = ConfigurationManager.AppSettings["ProjectName"];
+                string urlFragment = ConfigurationManager.AppSettings["URLFragment"];
+                string version = ConfigurationManager.AppSettings["DefaultVersion"];            
+                uri = "http://" + serverName + restOrData + projectName + "/" + urlFragment + "/" + version + "/";
+                ConfigurationManager.AppSettings["EspressoURL"] = uri;
+            }
+            return uri;
+        }
+
+        private string getOrCreateAPIKey()
+        {
+            string apiKey = ConfigurationManager.AppSettings["APIKey"];
+            
+            bool api = ConfigurationManager.AppSettings["UseAPIKey"] == "true";
+            if (api && apiKey == null)
+            {
+                //need to logon to Espresso and get a temporary apiKey
+                ConfigurationManager.AppSettings["APIKey"] = apiKey;
+            }
+
+            return apiKey;
+        }
+
         private async System.Threading.Tasks.Task<HttpResponseMessage> stripOutURLLinks(HttpResponseMessage response, UriBuilder remoteURI, UriBuilder originalURI)
         {
             string content = await response.Content.ReadAsStringAsync();
             content = content.Replace(remoteURI.Uri.Authority, originalURI.Uri.Authority);
             content = content.Replace(remoteURI.Path, "/api/");
+            string dataPath;
             string path = remoteURI.Path.Replace("/v1/", "");
+            
             content = content.Replace(path, "/api");
             var oldHeaders = response.Content.Headers;
 

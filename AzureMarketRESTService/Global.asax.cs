@@ -13,8 +13,16 @@ namespace AzureMarketRESTService
         protected void Application_Start()
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            ConfigurationManager.AppSettings["EspressoURL"] = "http://espressologic-msftdemo.cloudapp.net/rest/msftdemo/advwrk/v1/";
-            ConfigurationManager.AppSettings["APIKey"] = "dJDGTz6f88cmu4kk1hpW";
+            ConfigurationManager.AppSettings["ServerName"] = "espressologic-msftdemo.cloudapp.net";
+            ConfigurationManager.AppSettings["ProjectName"] = "msftdemo";
+            ConfigurationManager.AppSettings["URLFragment"] = "demo";
+            ConfigurationManager.AppSettings["DefaultVersion"] = "v1";
+            ConfigurationManager.AppSettings["UserName"] = "";
+            ConfigurationManager.AppSettings["Password"] = "";
+            ConfigurationManager.AppSettings["UseAPIKey"] = "true";
+            //ConfigurationManager.AppSettings["EspressoURL"] = "http://espressologic-msftdemo.cloudapp.net/rest/msftdemo/demo/v1/";
+            //"http://espressologic-msftdemo.cloudapp.net/rest/msftdemo/advwrk/v1/";
+            ConfigurationManager.AppSettings["APIKey"] = "demo_full";//"dJDGTz6f88cmu4kk1hpW";
         }
     }
 }

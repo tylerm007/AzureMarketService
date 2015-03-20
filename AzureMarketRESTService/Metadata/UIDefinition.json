@@ -1,6 +1,5 @@
 ﻿{
     "parameters": {
-        "type": "object",
         "EspressoService": {
             "EspressoURL": {
                 "defaultValue": "http://{servername}/rest/{project}/{urlfragment}/v1/",
