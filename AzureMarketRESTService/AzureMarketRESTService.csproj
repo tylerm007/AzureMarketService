@@ -116,12 +116,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Metadata\icons\Azure-115x115.png" />
-    <Content Include="Metadata\icons\Azure-255x115-2.png" />
-    <Content Include="Metadata\icons\Azure-255x115.png" />
-    <Content Include="Metadata\icons\Azure-40x40.png" />
-    <Content Include="Metadata\icons\Azure-90x90.png" />
-    <Content Include="Metadata\icons\Marketplace3.png" />
+    <Content Include="Metadata\icons\large-icon.png" />
+    <Content Include="Metadata\icons\hero-icon.png" />
+    <Content Include="Metadata\icons\small-icon.png" />
+    <Content Include="Metadata\icons\medium-icon.png" />
     <Content Include="Web.config" />
     <Content Include="Metadata\deploymentTemplates\apiappconfig.azureresource.json" />
     <Content Include="packages.config" />

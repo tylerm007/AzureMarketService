@@ -11,8 +11,8 @@
         "APIKey": {
             "type": "string"
         }
-    }
-}, "resources": [ 
+    },
+  "resources": [ 
      {
       "apiVersion": "2014-11-01",
       "type": "Microsoft.Web/sites",
