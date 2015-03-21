@@ -1,17 +1,71 @@
 ﻿{
     "parameters": {
         "EspressoService": {
-            "EspressoURL": {
-                "defaultValue": "http://{servername}/rest/{project}/{urlfragment}/v1/",
-                "displayName": "Instance URL Location",
+            "ServerName": {
+                "defaultValue": "your server name",
+                "displayName": "Espresso Logic ServerName",
                 "description": "This is the instance location where your Espresso Logic account is created it also includes the account and project information. You can get this detail by referring to REST Lab or use this link: http://docs.espressologic.com/docs/debugging/rest-lab/. This value can be found as part of the URL when you log into your Espresso account.",
                 "tooltip": "This is the instance location where your Espresso Logic account is created. You can get this detail by referring the REST LAB or to this link: http://docs.espressologic.com/docs/debugging/rest-lab/. This value can be found as part of the URL when you log into your Espresso account.",
                 "constraints": {
                     "required": "true"
                 }
             },
+            "AccountName": {
+                "defaultValue": "your account name",
+                "displayName": "Espresso Logic AccountName",
+                "description": "This is the account instance location where your Espresso Logic account is created it also includes the account and project information. You can get this detail by referring to REST Lab or use this link: http://docs.espressologic.com/docs/debugging/rest-lab/. This value can be found as part of the URL when you log into your Espresso account.",
+                "tooltip": "This is the account instance location where your Espresso Logic account is created. You can get this detail by referring the REST LAB or to this link: http://docs.espressologic.com/docs/debugging/rest-lab/. This value can be found as part of the URL when you log into your Espresso account.",
+                "constraints": {
+                    "required": "true"
+                }
+            },
+            "ProjectName": {
+                "defaultValue": "your project name",
+                "displayName": "Espresso Logic ProjectName",
+                "description": "This is the proejct name where your Espresso Logic account is created it also includes the account and project information. You can get this detail by referring to REST Lab or use this link: http://docs.espressologic.com/docs/debugging/rest-lab/. This value can be found as part of the URL when you log into your Espresso account.",
+                "tooltip": "This is the project name where your Espresso Logic account is created. You can get this detail by referring the REST LAB or to this link: http://docs.espressologic.com/docs/debugging/rest-lab/. This value can be found as part of the URL when you log into your Espresso account.",
+                "constraints": {
+                    "required": "true"
+                }
+            },
+            "UserName": {
+                "defaultValue": "your logon user name",
+                "displayName": "Espresso Logic UserName",
+                "description": "User name used to logon to server",
+                "tooltip": "User Name",
+                "constraints": {
+                    "required": "true"
+                }
+            },
+            "Password": {
+                "defaultValue": "your password",
+                "displayName": "Espresso Logic Password",
+                "description": "Password for your logon to the server",
+                "tooltip": "Password",
+                "constraints": {
+                    "required": "true"
+                }
+            },
+            "ProjectName": {
+                "defaultValue": "your server name/",
+                "displayName": "Espresso Logic ServerName",
+                "description": "This is the ProjectName where your Espresso Logic account is created it also includes the account and project information. You can get this detail by referring to REST Lab or use this link: http://docs.espressologic.com/docs/debugging/rest-lab/. This value can be found as part of the URL when you log into your Espresso account.",
+                "tooltip": "This is the ProjectName where your Espresso Logic account is created. You can get this detail by referring the REST LAB or to this link: http://docs.espressologic.com/docs/debugging/rest-lab/. This value can be found as part of the URL when you log into your Espresso account.",
+                "constraints": {
+                    "required": "true"
+                }
+            },
+             "DefaultAPIVersion": {
+                "defaultValue": "v1/",
+                "displayName": "DefaultAPIVersion (do not change)",
+                "description": "DefaultAPIVersion v1",
+                "tooltip": "DefaultAPIVersion v1",
+                "constraints": {
+                    "required": "true"
+                }
+            },
             "APIKey": {
-                "defaultValue": "demo_full",
+                "defaultValue": "enter api key",
                 "displayName": "API Key",
                 "description": "This is the API Key that grants specific access to this microservice account. You can get this detail by referring to this link: http://docs.espressologic.com/docs/logic-designer/security/authentication/.",
                 "tooltip": "Enter the API Key for this specific microservice",

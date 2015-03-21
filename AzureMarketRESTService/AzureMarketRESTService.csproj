@@ -121,10 +121,11 @@
     <Content Include="Metadata\icons\small-icon.png" />
     <Content Include="Metadata\icons\medium-icon.png" />
     <Content Include="Web.config" />
-    <Content Include="Metadata\deploymentTemplates\apiappconfig.azureresource.json" />
+    <Content Include="Metadata\ExtraParam.AzureResource.json" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config" />
     <Content Include="Metadata\UIDefinition.json" />
+    <Content Include="Metadata\deploymentTemplates\apiappconfig.azureresource.json" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
