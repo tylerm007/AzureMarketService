@@ -16,16 +16,24 @@ namespace AzureMarketRESTService
             // Web API routes   
             config.MapHttpAttributeRoutes();
 
-           
+
             config.Routes.MapHttpRoute(name: "Proxy", routeTemplate: "api/{*path}", handler: HttpClientFactory.CreatePipeline
               (
                 innerHandler: new HttpClientHandler(), // will never get here if proxy is doing its job
-                handlers: new DelegatingHandler[]
-                { new ProxyHandler() }
+                handlers: new DelegatingHandler[] { new ProxyHandler() }
               ),
               defaults: new { path = RouteParameter.Optional },
               constraints: null
             );
+            config.Routes.MapHttpRoute(name: "ProxyData", routeTemplate: "api/data/{*path}", handler: HttpClientFactory.CreatePipeline
+              (
+                innerHandler: new HttpClientHandler(), // will never get here if proxy is doing its job
+                handlers: new DelegatingHandler[] { new ProxyHandler() }
+              ),
+              defaults: new { path = RouteParameter.Optional },
+              constraints: null
+            );
+
         }
     }
 }

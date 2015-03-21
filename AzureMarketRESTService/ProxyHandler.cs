@@ -12,11 +12,16 @@ namespace AzureMarketRESTService
         
         protected override async System.Threading.Tasks.Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, System.Threading.CancellationToken cancellationToken)
         {
+           
+            UriBuilder originalURI = new UriBuilder(request.RequestUri);
+            restOrData = "/rest/";
+            if (request.RequestUri.PathAndQuery.StartsWith("/api/data/"))
+            {
+                restOrData = "/data/";
+            }
             string remoteWebSite = buildRemoteURI();
             string apikey = getOrCreateAPIKey();
-
-            UriBuilder remoteURI = new UriBuilder(remoteWebSite);
-            UriBuilder originalURI = new UriBuilder(request.RequestUri);            
+            UriBuilder remoteURI = new UriBuilder(remoteWebSite);         
             string urlPart = parseURL(request.RequestUri.PathAndQuery);
             UriBuilder forwardUri = new UriBuilder(remoteWebSite + urlPart);
             forwardUri.Port = 80;
@@ -43,15 +48,18 @@ namespace AzureMarketRESTService
         {
             //only need to do this once
             string uri = ConfigurationManager.AppSettings["EspressoURL"];
-            if (uri == null)
-            {
+            //if (uri == null ||)
+           // {
                 string serverName = ConfigurationManager.AppSettings["ServerName"];
                 string projectName = ConfigurationManager.AppSettings["AccountName"];
                 string urlFragment = ConfigurationManager.AppSettings["ProjectName"];
-                string version = ConfigurationManager.AppSettings["DefaultAPIVersion"];            
-                uri = "http://" + serverName + restOrData + projectName + "/" + urlFragment + "/" + version + "/";
+                string version = ConfigurationManager.AppSettings["DefaultAPIVersion"];
+                if (serverName != null && projectName != null & urlFragment != null)
+                {
+                    uri = "http://" + serverName + restOrData + projectName + "/" + urlFragment + "/" + version + "/";
+                }
                 ConfigurationManager.AppSettings["EspressoURL"] = uri;
-            }
+            //}
             return uri;
         }
 
@@ -74,10 +82,12 @@ namespace AzureMarketRESTService
             string content = await response.Content.ReadAsStringAsync();
             content = content.Replace(remoteURI.Uri.Authority, originalURI.Uri.Authority);
             content = content.Replace(remoteURI.Path, "/api/");
-            string dataPath;
+            string projectpart = remoteURI.Path.Substring(5);
+            projectpart = "data" + projectpart;
             string path = remoteURI.Path.Replace("/v1/", "");
             
             content = content.Replace(path, "/api");
+            content = content.Replace(projectpart, "api/data/");
             var oldHeaders = response.Content.Headers;
 
             response.Content = new StringContent(content);
@@ -87,10 +97,15 @@ namespace AzureMarketRESTService
         private string parseURL(string pathAndQuery)
         {
             string url = "";
-            int index = pathAndQuery.IndexOf("/api/");
+            string newURL = pathAndQuery;
+            if (pathAndQuery.StartsWith("/api/data/"))
+            {
+                newURL = pathAndQuery.Replace("/api/data/", "/api/");
+            }
+            int index = newURL.IndexOf("/api/");
             if (index == 0)
             {
-                url = pathAndQuery.Substring(index + 5);
+                url = newURL.Substring(index + 5);
             }
             else
             {
