@@ -16,13 +16,10 @@ namespace AzureMarketRESTService
             ConfigurationManager.AppSettings["ServerName"] = "";
             ConfigurationManager.AppSettings["AccountName"] = "";
             ConfigurationManager.AppSettings["ProjectName"] = "";
-            ConfigurationManager.AppSettings["DefaultAPIVersion"] = "";
+            ConfigurationManager.AppSettings["DefaultAPIVersion"] = "v1";
             ConfigurationManager.AppSettings["UserName"] = "";
             ConfigurationManager.AppSettings["Password"] = "";
             ConfigurationManager.AppSettings["UseAPIKey"] = "true";
-            //ConfigurationManager.AppSettings["EspressoURL"] = "";
-            //"http://espressologic-msftdemo.cloudapp.net/rest/msftdemo/demo/v1/";
-            //"http://espressologic-msftdemo.cloudapp.net/rest/msftdemo/advwrk/v1/";
             ConfigurationManager.AppSettings["APIKey"] = "";//"";
         }
     }

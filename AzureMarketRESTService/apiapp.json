@@ -11,13 +11,9 @@
         "enterprise"
     ],
     "endpoints": {
-        "apiDefinition": "/swagger/docs/v1",
-        "status": null
+        "apiDefinition": "/swagger/docs/v1"
     },
-    "tags": [
-        "Espresso Logic",
-        "REST Services"
-    ],
+    "tags": [  "apiapps", "apiapps-app-datasvc", "apiapps-pa","Espresso Logic", "REST Services" ],
     "links": [
         {
       "text": "Home Page",
@@ -32,6 +28,5 @@
             "url": "http://www.espressologic.com/terms-and-conditions/"
         }
     ],
-  "copyright": "Copyright 2015 Espresso Logic",
-  "brandColor": "#02a0df"
+  "copyright": "Copyright 2015 Espresso Logic"
 }

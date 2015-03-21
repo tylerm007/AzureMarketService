@@ -116,16 +116,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Metadata\icons\large-icon.png" />
     <Content Include="Metadata\icons\hero-icon.png" />
+    <Content Include="Metadata\icons\large-icon.png" />
+    <Content Include="Metadata\icons\wide-icon.png" />
     <Content Include="Metadata\icons\small-icon.png" />
     <Content Include="Metadata\icons\medium-icon.png" />
-    <Content Include="Web.config" />
-    <Content Include="Metadata\ExtraParam.AzureResource.json" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config" />
-    <Content Include="Metadata\UIDefinition.json" />
     <Content Include="Metadata\deploymentTemplates\apiappconfig.azureresource.json" />
+    <Content Include="Metadata\ExtraParam.AzureResource.json" />
+    <Content Include="Metadata\UIDefinition.json" />
+    <Content Include="Metadata\deploymentTemplates\resourceTemplate.json" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
@@ -140,6 +144,7 @@
   <ItemGroup>
     <Content Include="apiapp.json" />
     <None Include="Properties\PublishProfiles\AzureMarketRESTService%28AzureMarketRESTServiceResourceGroup%29.pubxml" />
+    <None Include="Properties\PublishProfiles\AzureMarketRESTService%28EspressoResourceGroup%29.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

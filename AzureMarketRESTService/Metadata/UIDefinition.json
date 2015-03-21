@@ -1,4 +1,13 @@
 ﻿{
+    "markup": {
+		"reference": {
+			"bladeName": "CreateMicroserviceBlade",
+			"bladeExtension": "Microsoft_Azure_Microservices",
+			"partName": "MicroserviceDetailsPart",
+			"partExtension": "Microsoft_Azure_Microservices",
+			"partKeyId": "id"
+		}
+	},
     "parameters": {
         "EspressoService": {
             "ServerName": {
@@ -47,7 +56,7 @@
                 }
             },
             "ProjectName": {
-                "defaultValue": "your server name/",
+                "defaultValue": "your projecct name/",
                 "displayName": "Espresso Logic ServerName",
                 "description": "This is the ProjectName where your Espresso Logic account is created it also includes the account and project information. You can get this detail by referring to REST Lab or use this link: http://docs.espressologic.com/docs/debugging/rest-lab/. This value can be found as part of the URL when you log into your Espresso account.",
                 "tooltip": "This is the ProjectName where your Espresso Logic account is created. You can get this detail by referring the REST LAB or to this link: http://docs.espressologic.com/docs/debugging/rest-lab/. This value can be found as part of the URL when you log into your Espresso account.",
@@ -55,8 +64,8 @@
                     "required": "true"
                 }
             },
-             "DefaultAPIVersion": {
-                "defaultValue": "v1/",
+            "DefaultAPIVersion": {
+                "defaultValue": "v1",
                 "displayName": "DefaultAPIVersion (do not change)",
                 "description": "DefaultAPIVersion v1",
                 "tooltip": "DefaultAPIVersion v1",

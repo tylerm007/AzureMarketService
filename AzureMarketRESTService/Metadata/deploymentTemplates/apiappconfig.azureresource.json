@@ -21,13 +21,13 @@
             "type": "string"
         },
         "Password": {
-            "type": "string"
+            "type": "securestring"
         },
         "UseAPIKey": {
             "type": "string"
         },
         "APIKey": {
-            "type": "string"
+            "type": "securestring"
         }
     },
     "resources": [
