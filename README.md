@@ -79,4 +79,8 @@ validate salesDB:customer.checkCredit msg = “yyy” where= balance > limit
 * Let's run
 curl get http://MyHost.com/rest/MyAccount/MyServer/v1/orders
 
+or
+when running this microservice inside C#
+curl http://localhost:59275/api/orders
+
 ```
