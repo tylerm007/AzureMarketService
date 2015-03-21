@@ -9,17 +9,17 @@ Espresso creates Enterprise-class Azure RESTful APIs across multiple databases, 
 ##Rapidly Create Enterprise-class RESTful Backends
 Create RESTful backends to accelerate delivering projects within your organization
 
-Mobile apps: REST APIs are perfect for accessing multiple data sources.  And Espresso dramatically simplifies your apps – rich nested document APIs providing filtering, pagination, optimistic locking, generated key handling, etc.
-Integration: RESTful APIs define business objects that can be exchanged between systems
-Partnering: create partner relationships by exposing selected APIs publicly
-Modernization: break down monolithic web apps, by extracting their logic into a UI-independent microservices – API Apps that centralize data access with enforcement of logic and security.  The resultant service can be shared across application architectures – not just heterogeneous web apps, but integration and partnering.
+1. Mobile apps: REST APIs are perfect for accessing multiple data sources.  And Espresso dramatically simplifies your apps – rich nested document APIs providing filtering, pagination, optimistic locking, generated key handling, etc.
+2. Integration: RESTful APIs define business objects that can be exchanged between systems
+3. Partnering: create partner relationships by exposing selected APIs publicly
+4. Modernization: break down monolithic web apps, by extracting their logic into a UI-independent microservices – API Apps that centralize data access with enforcement of logic and security.  The resultant service can be shared across application architectures – not just heterogeneous web apps, but integration and partnering.
  
 
 ##Rapidly Publish Customizable API Apps to Azure
-espressoFaucetCreate API Apps to publish into the Azure catalog.  Espresso handles the API, logic and security, Azure provides the marketplace, monitoring, and billing.  Your business ideas get to market, fast.
+API Apps to publish into the Azure catalog.  Espresso handles the API, logic and security, Azure provides the marketplace, monitoring, and billing.  Your business ideas get to market, fast.
 
 Even better, logic can be customized by your customers – they just add rules, and the logic is automatically re-ordered and re-optimized.  So not only do you get to market faster, your product is more flexible.
-The Difference is Declarative
+###The Difference is Declarative
 Espresso stands in stark contrast to “your code goes here” frameworks, by providing a declarative approach to creating APIs, integrating databases, and enforcing logic and security.  You use a simple point and click interface to specify what you want, not the detailed coding of how to do it.  The result is remarkable business value.
 
  
@@ -49,9 +49,9 @@ It’s not just technical – Declarative helps you get the requirements right. 
 Unique Declarative API App Creation
 Declarative means you just declare what you want for an Enterprise-class API:
 
-API: Default created instantly, then point and click Custom Resources with nesting and aliasing.  Runtime support for filtering, pagination, optimistic locking, generated keys, etc.
-Integrate: add new data sources, use in Custom Resources
-Enforce: logic and security with spreadsheet-like Reactive Programming expressions, plus JavaScript based on an automatically created Object Model
+1. API: Default created instantly, then point and click Custom Resources with nesting and aliasing.  Runtime support for filtering, pagination, optimistic locking, generated keys, etc.
+2. Integrate: add new data sources, use in Custom Resources
+3. Enforce: logic and security with spreadsheet-like Reactive Programming expressions, plus JavaScript based on an automatically created Object Model
 You also have deployment flexibility – Espresso operates on premise (VMware or Docker), or in the cloud (Azure or AWS).
 
 ##Manage your data with the Live Browser.
