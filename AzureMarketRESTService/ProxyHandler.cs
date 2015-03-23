@@ -59,25 +59,26 @@ namespace AzureMarketRESTService
             {
                 System.Diagnostics.Trace.WriteLine("Response is Successful - starting strip code.");
                 string content = await response.Content.ReadAsStringAsync();
+                int len = content.Length;
                 stripOutURLLinks(content, remoteURI, originalURI);
                 response.Content = new StringContent(content);
-                System.Diagnostics.Trace.WriteLine(content);
+                //response.Headers.Remove("Content-Type");
+                System.Diagnostics.Trace.WriteLine(response.Headers.ToString());
+                response.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+                System.Diagnostics.Trace.WriteLine(len);
             }
-            System.Diagnostics.Trace.WriteLine("Response returns - should be done.");
+            System.Diagnostics.Trace.WriteLine("Response returns - should be done. ");
             return response;
         }
 
         private string buildRemoteURI(HttpRequestMessage request)
         {
-            //only need to do this once
             restOrData = "/rest/";
             if (request.RequestUri.PathAndQuery.StartsWith("/api/data/"))
             {
                 restOrData = "/data/";
             }
-            string uri = ConfigurationManager.AppSettings["EspressoURL"];
-            //if (uri == null ||)
-            // {
+            string uri = ConfigurationManager.AppSettings["EspressoURL"];            
             string serverName = ConfigurationManager.AppSettings["ServerName"];
             string projectName = ConfigurationManager.AppSettings["AccountName"];
             string urlFragment = ConfigurationManager.AppSettings["ProjectName"];
@@ -87,7 +88,6 @@ namespace AzureMarketRESTService
                 uri = "http://" + serverName + restOrData + projectName + "/" + urlFragment + "/" + version + "/";
             }
             ConfigurationManager.AppSettings["EspressoURL"] = uri;
-            //}
             return uri;
         }
 
@@ -105,7 +105,7 @@ namespace AzureMarketRESTService
 
         private void stripOutURLLinks(string content, UriBuilder remoteURI, UriBuilder originalURI)
         {
-            System.Diagnostics.Trace.WriteLine(content);
+            //System.Diagnostics.Trace.WriteLine(content);
             content = content.Replace(remoteURI.Uri.Authority, originalURI.Uri.Authority);
             content = content.Replace(remoteURI.Path, "/api/");
             string projectpart = remoteURI.Path.Substring(5);

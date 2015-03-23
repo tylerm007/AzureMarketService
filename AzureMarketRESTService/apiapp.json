@@ -1,17 +1,21 @@
 ﻿{
     "$schema": "http://json-schema.org/schemas/2014-11-01/apiapp.json#",
-    "id": "AzureMarketRESTService",
-    "namespace": "microsoft.com",
+    "id": "EspressoAPIService",
+    "namespace": "espressologic.com",
     "gateway": "2015-01-14",
-    "version": "0.0.9",
-    "title": "Espresso Logic REST MicroService",
-    "summary": "A dynamic microservice that connects to your Espresso Logic REST API service",
+    "version": "0.0.11",
+    "title": "Espresso Logic REST API MicroService",
+    "summary": "A dynamic microservice that connects to your Espresso Logic REST Server and provides a fast/effecient/feature rich API endpoints with logic & security,",
     "author": "Espresso Logic",
     "categories": [
-        "enterprise"
+        "enterprise",
+        "api",
+        "rest"
     ],
+    "homepage": "http://www.espressologi.com",
     "endpoints": {
-        "apiDefinition": "/api/@docs"
+        "apiDefinition": "/$metadata",
+        "status": "/status"
     },
     "tags": [  "apiapps", "apiapps-app-datasvc", "apiapps-pa","Espresso Logic", "REST Services" ],
     "links": [
