@@ -1,10 +1,30 @@
-# AzureMarketService
-Azure Market API Service 
+
+# Espresso LogicAzure API Service 
 
 ##Key Use Case for Cloud, Mobile
 Virtually all organizations are looking to leverage cloud / mobile technologies, to promote internal efficiency and external access.  These require efficient networked data access to multiple databases, with enforcement of your business policy for logic and security.
 
-Espresso creates Enterprise-class Azure RESTful APIs across multiple databases, enforcing your logic and security.  It’s declarative, so it’s remarkably fast and simple to create systems as follows.
+Espresso creates Enterprise-class Azure RESTful APIs across multiple databases, enforcing your logic and security.  It’s declarative, so it’s remarkably fast and simple to create systems as follows. See our [webpage](http://www.espressologic.com/declarative-api-app-creation-10x-faster)
+
+Key Advantages of Espresso Logic API
+
+1. Runs inside your Azure instance securely
+2. Fully integrated into Visual Studio as an API Service
+3. Support for multiple databases
+4. Define custom resource endpoints (nested documents)
+5. API created for tables, views, and stored procedures
+6. Automatic pagination (forward and backward)
+7. Optimistic locking
+8. Role-based access to objects, column and row level security
+9. Ccustom validation and business logic on multi-table transactions
+10. Support for upsert (MERGE_INSERT)
+11. Primary key propagation 
+12. Node.JS command line and web based admin portal
+13. Dynamic (Live) view of data for back office testing
+14. Swagger 2.0 Support
+15. Support for large objects (Blob)
+16. Simple REST API model
+
 
 ##Rapidly Create Enterprise-class RESTful Backends
 Create RESTful backends to accelerate delivering projects within your organization
@@ -54,33 +74,26 @@ Declarative means you just declare what you want for an Enterprise-class API:
 3. Enforce: logic and security with spreadsheet-like Reactive Programming expressions, plus JavaScript based on an automatically created Object Model
 You also have deployment flexibility – Espresso operates on premise (VMware or Docker), or in the cloud (Azure or AWS).
 
-##Manage your data with the Live Browser.
 ##Create an enterprise API like this:
+```
+GET|POST|PUT|DELETE
 
+/api/{table|view|resource}
+/api/{table|view|resource}?{filter|arg.argname|sort|orderby|pagesize|offset}
+/api/data/{table}
+/api/data/{table}/{pkey}/{attribute}
 
-See how reactive programming operates
+Meta API (information about your service)
 
-
-This Fast, this Simple
-This pseudo-script is all it takes to create your server.  Nothing else.  (Or, use the UI as shown in the video above.)
+/api/@docs
+/api/@rules
+/api/@tables
+/api/@tables/{tablename}
+/api/@views
+/api/@views/{view}
+/api/@resources
+/api/@resources/{ident}
 
 ```
-* 1. Connect - create default server for tables, views, sprocs (security not shown)
-server urlFragment=MyServer
-database name = salesDB, connection = xxx
-database name = hrDB, connection = yyy
-* 2. Shape - create Nested Document API for multiple databases
-resource name = orders, table = salesDB:order
-subresource name = orders.salesRep, table = hrDB:person, attributes = names as salesRepName…
-* 3. Protect - add logic
-derive salesDB:customer.balance = 
-            sum (orders.amountTotal where shipDate === null)
-validate salesDB:customer.checkCredit msg = “yyy” where= balance > limit
-* Let's run
-curl get http://MyHost.com/rest/MyAccount/MyServer/v1/orders
-
-or
-when running this microservice inside C#
-curl http://localhost:59275/api/orders
-
-```
+http://www.espressologic.com
+copyright (c) 2015 Espresso Logic
