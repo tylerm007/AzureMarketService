@@ -28,7 +28,7 @@ namespace AzureMarketRESTService
             config.Routes.MapHttpRoute(name: "ProxyData", routeTemplate: "api/data/{*path}", handler: HttpClientFactory.CreatePipeline
               (
                 innerHandler: new HttpClientHandler(), // will never get here if proxy is doing its job
-                handlers: new DelegatingHandler[] { new ProxyHandler() }
+                handlers: new DelegatingHandler[] { new ProxyHandler() } //may need special handlers for streams
               ),
               defaults: new { path = RouteParameter.Optional },
               constraints: null

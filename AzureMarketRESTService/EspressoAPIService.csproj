@@ -127,7 +127,6 @@
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config" />
     <Content Include="Metadata\deploymentTemplates\apiappconfig.azureresource.json" />
-    <Content Include="Metadata\ExtraParam.AzureResource.json" />
     <Content Include="Metadata\UIDefinition.json" />
     <Content Include="Metadata\deploymentTemplates\resourceTemplate.json" />
     <None Include="Project_Readme.html" />
@@ -143,8 +142,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="apiapp.json" />
-    <None Include="Properties\PublishProfiles\AzureMarketRESTService%28AzureMarketRESTServiceResourceGroup%29.pubxml" />
-    <None Include="Properties\PublishProfiles\AzureMarketRESTService%28EspressoResourceGroup%29.pubxml" />
+    <Content Include="Swagger\StaticSwagger.json" />
+    <None Include="Properties\PublishProfiles\APIEspressoService%28espressoresourcegroup%29.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
