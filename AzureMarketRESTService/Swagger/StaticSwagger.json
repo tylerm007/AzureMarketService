@@ -1,0 +1,347 @@
+﻿{
+  "swaggerVersion": "1.2",
+  "apiVersion": "1.0",
+  "basePath": "http://localhost:5556",
+  "resourcePath": "/api/",
+  "apis": [
+    {
+      "path": "/api/delete/{tableName}/pkey",
+      "operations": [
+        {
+          "method": "DELETE",
+          "summary": "Delete an existing records in the specified table",
+          "nickname": "Delete",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "tableName",
+              "description": "Table Name",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "paramType": "body",
+              "name": "requestMessage",
+              "description": "Request Message",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "Successful Delete Operation"
+            },
+            {
+              "code": 401,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 500,
+              "message": "Internal Server Error"
+            },
+            {
+              "code": 400,
+              "message": "Bad Request"
+            },
+            {
+              "code": 404,
+              "message": "Not found"
+            }
+          ],
+          "produces": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml"
+          ],
+          "consumes": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "path": "/api/{procedureName}?[args]",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "Execute Procedure",
+          "nickname": "ExecuteProcedure",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "procedureName",
+              "description": "Procedure Name",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "paramType": "body",
+              "name": "requestMessage",
+              "description": "Request Message",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "Successful Execute Procedure Operation"
+            },
+            {
+              "code": 401,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 500,
+              "message": "Internal Server Error"
+            },
+            {
+              "code": 400,
+              "message": "Bad Request"
+            },
+            {
+              "code": 404,
+              "message": "Not found"
+            }
+          ],
+          "produces": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml"
+          ],
+          "consumes": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "path": "/api/{tableName}",
+      "operations": [
+        {
+          "method": "POST",
+          "summary": "Insert new records in the specified table",
+          "nickname": "Sql_Insert",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "tableName",
+              "description": "Table Name",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "paramType": "body",
+              "name": "requestMessage",
+              "description": "Request Message",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "Successful Insert Operation"
+            },
+            {
+              "code": 401,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 500,
+              "message": "Internal Server Error"
+            },
+            {
+              "code": 400,
+              "message": "Bad Request"
+            },
+            {
+              "code": 404,
+              "message": "Not found"
+            }
+          ],
+          "produces": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml"
+          ],
+          "consumes": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "path": "/api/{tableName|view|resource}/[pkey]?[filter]",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "Get existing record(s from the specified table,view, or resource",
+          "nickname": "Select",)
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "tableName or view or resource",
+              "description": "Object Name",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "paramType": "body",
+              "name": "requestMessage",
+              "description": "Request Message",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "Successful GET Operation"
+            },
+            {
+              "code": 401,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 500,
+              "message": "Internal Server Error"
+            },
+            {
+              "code": 400,
+              "message": "Bad Request"
+            },
+            {
+              "code": 404,
+              "message": "Not found"
+            }
+          ],
+          "produces": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml"
+          ],
+          "consumes": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "path": "/api/{tableName}",
+      "operations": [
+        {
+          "method": "POST",
+          "summary": "Update existing records in the specified table",
+          "nickname": "Update",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "tableName",
+              "description": "Table Name",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "paramType": "body",
+              "name": "requestMessage",
+              "description": "Request Message",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "Successful Update Operation"
+            },
+            {
+              "code": 401,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 500,
+              "message": "Internal Server Error"
+            },
+            {
+              "code": 400,
+              "message": "Bad Request"
+            },
+            {
+              "code": 404,
+              "message": "Not found"
+            }
+          ],
+          "produces": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml"
+          ],
+          "consumes": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml",
+            "application/x-www-form-urlencoded"
+          ],
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "path": "/api/@docs",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "Get Swagger Metadata",
+          "nickname": "GetMetadata",
+          "parameters": [
+            
+          ],
+          "responseMessages": [
+            
+          ],
+          "produces": [
+            "application/json",
+            "text/json",
+            "application/xml",
+            "text/xml"
+          ],
+          "consumes": [
+            
+          ],
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "models": {
+    
+  }
+}

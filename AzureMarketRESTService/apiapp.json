@@ -3,7 +3,7 @@
     "id": "AzureMarketRESTService",
     "namespace": "microsoft.com",
     "gateway": "2015-01-14",
-    "version": "0.0.4",
+    "version": "0.0.9",
     "title": "Espresso Logic REST MicroService",
     "summary": "A dynamic microservice that connects to your Espresso Logic REST API service",
     "author": "Espresso Logic",
@@ -11,13 +11,13 @@
         "enterprise"
     ],
     "endpoints": {
-        "apiDefinition": "/swagger/docs/v1"
+        "apiDefinition": "/api/@docs"
     },
     "tags": [  "apiapps", "apiapps-app-datasvc", "apiapps-pa","Espresso Logic", "REST Services" ],
     "links": [
         {
-      "text": "Home Page",
-      "url": "http://www.espressologic.com/declarative-api-app-creation-10x-faster/"
+             "text": "Home Page",
+             "url": "http://www.espressologic.com/declarative-api-app-creation-10x-faster/"
         },
         {
             "text": "Documentation",
