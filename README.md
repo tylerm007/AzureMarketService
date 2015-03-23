@@ -16,7 +16,7 @@ Key Advantages of Espresso Logic API
 6. Automatic pagination (forward and backward)
 7. Optimistic locking
 8. Role-based access to objects, column and row level security
-9. Ccustom validation and business logic on multi-table transactions
+9. Custom validation and business logic on multi-table transactions
 10. Support for upsert (MERGE_INSERT)
 11. Primary key propagation 
 12. Node.JS command line and web based admin portal
