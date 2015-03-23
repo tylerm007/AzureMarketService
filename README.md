@@ -1,5 +1,5 @@
 
-# Espresso LogicAzure API Service 
+# Espresso Logic Azure API Service 
 
 ##Key Use Case for Cloud, Mobile
 Virtually all organizations are looking to leverage cloud / mobile technologies, to promote internal efficiency and external access.  These require efficient networked data access to multiple databases, with enforcement of your business policy for logic and security.
