@@ -17,15 +17,6 @@
         "DefaultAPIVersion": {
             "type": "string"
         },
-        "UserName": {
-            "type": "string"
-        },
-        "Password": {
-            "type": "string"
-        },
-        "UseAPIKey": {
-            "type": "string"
-        },
         "APIKey": {
             "type": "string"
         }
@@ -46,9 +37,6 @@
                         "AccountName": "[parameters('AccountName')]",
                         "ProjectName": "[parameters('ProjectName')]",
                         "DefaultAPIVersion": "[parameters('DefaultAPIVersion')]",
-                        "UserName": "[parameters('UserName')]",
-                        "Password": "[parameters('Password')]",
-                        "UseAPIKey": "[parameters('UseAPIKey')]",
                         "APIKey": "[parameters('APIKey')]"
                     }
                 }

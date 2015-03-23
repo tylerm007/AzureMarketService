@@ -27,7 +27,7 @@ namespace AzureMarketRESTService
             request.Headers.Host = remoteURI.Host;
             request.Headers.Add("Authorization", string.Format("Espresso {0}", apikey + ":1"));
             HttpResponseMessage response = null;
-            if (request.Method == HttpMethod.Get)
+            if (request.Method == HttpMethod.Get || request.Method == HttpMethod.Options)
             {
                 request.Content = null;
                 response = await client.SendAsync(request, HttpCompletionOption.ResponseHeadersRead);
@@ -53,18 +53,18 @@ namespace AzureMarketRESTService
                     }
                 }
             }
-            
+
             response.EnsureSuccessStatusCode();
             if (response.IsSuccessStatusCode)
             {
                 System.Diagnostics.Trace.WriteLine("Response is Successful - starting strip code.");
                 string content = await response.Content.ReadAsStringAsync();
                 int len = content.Length;
-                stripOutURLLinks(content, remoteURI, originalURI);
+                content = stripOutURLLinks(content, remoteURI, originalURI);
                 response.Content = new StringContent(content);
-                //response.Headers.Remove("Content-Type");
-                System.Diagnostics.Trace.WriteLine(response.Headers.ToString());
+                
                 response.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+                System.Diagnostics.Trace.WriteLine(response.Headers.ToString());
                 System.Diagnostics.Trace.WriteLine(len);
             }
             System.Diagnostics.Trace.WriteLine("Response returns - should be done. ");
@@ -78,7 +78,7 @@ namespace AzureMarketRESTService
             {
                 restOrData = "/data/";
             }
-            string uri = ConfigurationManager.AppSettings["EspressoURL"];            
+            string uri = ConfigurationManager.AppSettings["EspressoURL"];
             string serverName = ConfigurationManager.AppSettings["ServerName"];
             string projectName = ConfigurationManager.AppSettings["AccountName"];
             string urlFragment = ConfigurationManager.AppSettings["ProjectName"];
@@ -94,16 +94,16 @@ namespace AzureMarketRESTService
         private string getOrCreateAPIKey()
         {
             string apiKey = ConfigurationManager.AppSettings["APIKey"];
-            bool api = ConfigurationManager.AppSettings["UseAPIKey"] == "true";
-            if (api && apiKey == null)
-            {
-                //need to logon to Espresso and get a temporary apiKey
-                ConfigurationManager.AppSettings["APIKey"] = apiKey;
-            }
+           // bool api = ConfigurationManager.AppSettings["UseAPIKey"] == "true";
+           // if (api && apiKey == null)
+           // {
+           //need to logon to Espresso and get a temporary apiKey
+           //    ConfigurationManager.AppSettings["APIKey"] = apiKey;
+           // }
             return apiKey;
         }
 
-        private void stripOutURLLinks(string content, UriBuilder remoteURI, UriBuilder originalURI)
+        private string stripOutURLLinks(string content, UriBuilder remoteURI, UriBuilder originalURI)
         {
             //System.Diagnostics.Trace.WriteLine(content);
             content = content.Replace(remoteURI.Uri.Authority, originalURI.Uri.Authority);
@@ -114,6 +114,7 @@ namespace AzureMarketRESTService
             content = content.Replace(path, "/api");
             content = content.Replace(projectpart, "api/data/");
             System.Diagnostics.Trace.WriteLine("Finished Strip Code.");
+            return content;
         }
 
         private string parseURL(string pathAndQuery)

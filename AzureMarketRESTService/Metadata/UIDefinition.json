@@ -37,33 +37,6 @@
                     "required": "true"
                 }
             },
-            "UserName": {
-                "defaultValue": "your logon user name",
-                "displayName": "Espresso Logic UserName",
-                "description": "User name used to logon to server",
-                "tooltip": "User Name",
-                "constraints": {
-                    "required": "true"
-                }
-            },
-            "Password": {
-                "defaultValue": "your password",
-                "displayName": "Espresso Logic Password",
-                "description": "Password for your logon to the server",
-                "tooltip": "Password",
-                "constraints": {
-                    "required": "true"
-                }
-            },
-            "ProjectName": {
-                "defaultValue": "your projecct name/",
-                "displayName": "Espresso Logic ServerName",
-                "description": "This is the ProjectName where your Espresso Logic account is created.",
-                "tooltip": "This is the ProjectName where your Espresso Logic account is created.",
-                "constraints": {
-                    "required": "true"
-                }
-            },
             "DefaultAPIVersion": {
                 "defaultValue": "v1",
                 "displayName": "DefaultAPIVersion (do not change)",

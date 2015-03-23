@@ -5,7 +5,7 @@
   "resourcePath": "/api/",
   "apis": [
     {
-      "path": "/api/delete/{tableName}/pkey",
+      "path": "/api/{tableName}/pkey",
       "operations": [
         {
           "method": "DELETE",
@@ -191,11 +191,11 @@
       ]
     },
     {
-      "path": "/api/{tableName|view|resource}/[pkey]?[filter]",
+      "path": "/api/{tableName|view|resource}/[pkey]",
       "operations": [
         {
           "method": "GET",
-          "summary": "Get existing record(s from the specified table,view, or resource",
+          "summary": "Get existing record(s from the specified table,view, or resource passing primary key",
           "nickname": "Select",)
           "parameters": [
             {
