@@ -144,6 +144,7 @@
     <Content Include="apiapp.json" />
     <Content Include="Swagger\StaticSwagger.json" />
     <None Include="Properties\PublishProfiles\APIEspressoService%28espressoresourcegroup%29.pubxml" />
+    <None Include="Properties\PublishProfiles\EspressoAPIService%28EspressoAPIServiceResourceGroup%29.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
